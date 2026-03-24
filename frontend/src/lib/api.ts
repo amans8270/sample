@@ -2,6 +2,8 @@
  * API client for the TripAI backend.
  */
 
+import type { Trip, TripListResponse, GeneratedPageResponse } from "@/types/page";
+
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 class ApiError extends Error {
@@ -82,8 +84,6 @@ export function isAuthenticated(): boolean {
 }
 
 // Trips
-
-import type { Trip, TripListResponse, GeneratedPageResponse } from "@/types/page";
 
 export async function createTrip(data: {
   title: string;
